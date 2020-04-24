@@ -1,7 +1,44 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "header";
+@import "nav";
+@import "contacts";
+@import "map";
+@import "form";
+@import "contacts-info";
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  height: 100%;
+}
 
 body {
-  background: $c-gray;
+  background: $bg-white-theme;
+  font-family: "Raleway", sans-serif;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.wrapper {
+  width: 1147px;
+  margin: 0 auto;
+  @media (max-width: 1147px) {
+    width: 95%;
+  }
+}
+
+.main {
+  //height: 100%;
 }

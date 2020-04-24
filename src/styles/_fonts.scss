@@ -1,6 +1,48 @@
+//@font-face {
+//  font-family: "Roboto";
+//  src: url("../fonts/Roboto-Regular-webfont.woff") format("woff");
+//  font-weight: normal;
+//  font-style: normal;
+//}
+
 @font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Regular-webfont.woff") format("woff");
+  font-family: "icomoon";
+  src: url("../fonts/icomoon/icomoon.eot?kwrolu");
+  src: url("../fonts/icomoon/icomoon.eot?kwrolu#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon/icomoon.ttf?kwrolu") format("truetype"),
+    url("../fonts/icomoon/icomoon.woff?kwrolu") format("woff"),
+    url("../fonts/icomoon/icomoon.svg?kwrolu#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "icomoon", serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-marker:before {
+  content: "\e900";
+  color: #fff;
+}
+
+.icon-phone:before {
+  content: "\e902";
+  color: #fff;
+}
+
+.icon-massege:before {
+  content: "\e901";
+  color: #fff;
 }

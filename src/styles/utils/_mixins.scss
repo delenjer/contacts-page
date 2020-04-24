@@ -4,3 +4,8 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
