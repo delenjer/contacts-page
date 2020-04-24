@@ -1,3 +1,2 @@
 # Contacts page
-
-  [DEMO LINK]
+Project link -
