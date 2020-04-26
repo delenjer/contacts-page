@@ -9,3 +9,13 @@
   display: flex;
   justify-content: space-between;
 }
+
+@mixin style-text-placeholder {
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder {
+    font-family: $main-fonts;
+    font-size: 16px;
+    color: $input-placeholder-color;
+  }
+}

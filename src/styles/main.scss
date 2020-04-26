@@ -7,9 +7,11 @@
 @import "map";
 @import "form";
 @import "contacts-info";
+@import "select";
 
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 a {
@@ -29,6 +31,10 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-content: space-between;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 }
 
 .wrapper {
@@ -41,4 +47,17 @@ body {
 
 .main {
   //height: 100%;
+}
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 16px 0;
+  background-color: $btn-bg;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: $btn-color;
+  cursor: pointer;
 }
