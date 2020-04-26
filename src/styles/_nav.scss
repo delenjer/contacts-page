@@ -105,5 +105,11 @@
   .close-nav-btn,
   .show-nav-btn {
     display: block;
+    cursor: pointer;
   }
+}
+
+.show-nav {
+  display: block;
+  z-index: 20;
 }

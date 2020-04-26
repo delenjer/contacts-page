@@ -1,0 +1,16 @@
+.error {
+  border: 1px solid $error-color;
+
+  &__active {
+    position: absolute;
+    top: -22px;
+    right: 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: $error-color;
+  }
+}
+
+.hide-error {
+  display: none;
+}

@@ -30,11 +30,29 @@
     box-sizing: border-box;
     border-radius: 4px;
     padding: 11px 16px;
-    transition: 0.2s;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      width: 2px;
+      height: 100%;
+      background: #5a6bff;
+      border-radius: 8px 0 0 8px;
+      opacity: 0;
+      transition: 0.2s;
+    }
+
     &:focus-within {
-      border-left: 2px solid #5a6bff;
-      border-bottom-left-radius: 8px;
-      border-top-left-radius: 8px;
+      //border-left: 2px solid #5a6bff;
+      //border-bottom-left-radius: 8px;
+      //border-top-left-radius: 8px;
+
+      &:after {
+        opacity: 1;
+      }
     }
 
     &:last-of-type {
