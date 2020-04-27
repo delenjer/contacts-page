@@ -23,7 +23,7 @@ initialStateForm();
 
 function handleValidationForm() {
   const patternText = /[A-Za-z -]/g;
-  const patternNum = /[0-9]/g;
+  const patternNum = /^((0|0)+([0-9]){9})$/g;
   const patternEmail = /\S+@\S+\.\S+/g;
 
   return inputs.map(input => {
@@ -66,6 +66,10 @@ function handleValidationForm() {
           return true;
         }
         break;
+
+      default:
+        input.parentElement.classList.remove('error');
+        input.previousElementSibling.classList.add('hide-error');
     }
   });
 }
@@ -76,7 +80,7 @@ function successfulUploadForm() {
   loadedBtn.classList.remove('hide-btn-elem');
 
   setTimeout(() =>
-    greatBox.classList.remove('hide-great-box'), 1000);
+    greatBox.classList.remove('hide-great-box'), 1500);
 
   // eslint-disable-next-line no-return-assign
   inputs.map(input => input.value = '');
