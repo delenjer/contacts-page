@@ -1,0 +1,17 @@
+.loaded {
+  width: 24px;
+  height: 32px;
+  background-image: url("../images/icons/loader.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  position: absolute;
+
+  animation: animation 1s linear infinite;
+}
+
+@keyframes animation {
+  to {
+    transform: rotate(360deg);
+  }
+}

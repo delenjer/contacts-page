@@ -53,60 +53,84 @@
           <form class="contacts-form form">
             <h1 class="form__title">Contact Us</h1>
 
-            <p class="form__sub-title">Subject</p>
-            <div tabindex="0" class="custom-select">
-              <select>
-                <option>Work opportunities</option>
-                <option>Questions about product</option>
-                <option>Сooperation</option>
-                <option>Other</option>
-              </select>
+            <div class="hide-wrapper">
+              <p class="form__sub-title">Subject</p>
+              <div tabindex="0" class="custom-select">
+                <select>
+                  <option>Work opportunities</option>
+                  <option>Questions about product</option>
+                  <option>Сooperation</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <p class="form__sub-title">Name</p>
+              <label class="form__list">
+                <span class="error__active hide-error">Error Message</span>
+
+                <input type="text"
+                       name="text"
+                       placeholder="Enter your name..."
+                       class="form__item form__input"
+                >
+              </label>
+
+              <p class="form__sub-title">Phone number</p>
+              <label class="form__list">
+                <span class="error__active hide-error">Error Message</span>
+
+                <input type="text"
+                       name="number"
+                       placeholder="Enter your phone number..."
+                       class="form__item form__input"
+                >
+              </label>
+
+              <p class="form__sub-title">Email</p>
+              <label class="form__list">
+                <span class="error__active hide-error">Error Message</span>
+
+                <input type="text"
+                       name="email"
+                       placeholder="Enter your email address..."
+                       class="form__item form__input"
+                >
+              </label>
+
+              <p class="form__sub-title">Message</p>
+              <label class="form__list">
+                <span class="error__active hide-error">Error Message</span>
+
+                <textarea name="message"
+                          placeholder="Your message..."
+                          class="form__item form__textarea"
+                ></textarea>
+              </label>
             </div>
 
-            <p class="form__sub-title">Name</p>
-            <label class="form__list">
-              <span class="error__active hide-error">Error Message</span>
+            <button type="submit" class="btn form__btn">
+              <span class="btn-text">Send</span>
 
-              <input type="text"
-                     name="text"
-                     placeholder="Enter your name..."
-                     class="form__item form__input"
-              >
-            </label>
+              <span class="loaded hide-btn-elem"></span>
+            </button>
 
-            <p class="form__sub-title">Phone number</p>
-            <label class="form__list">
-              <span class="error__active hide-error">Error Message</span>
+            <div class="great-box hide-great-box">
+              <div class="great-box__wrapper">
+                <div class="great-box__img">
+                  <img src="images/illustration.svg" alt="Congratulations">
+                </div>
 
-              <input type="text"
-                     name="number"
-                     placeholder="Enter your phone number..."
-                     class="form__item form__input"
-              >
-            </label>
+                <h2 class="great-box__title">
+                  We received your message!
+                </h2>
 
-            <p class="form__sub-title">Email</p>
-            <label class="form__list">
-              <span class="error__active hide-error">Error Message</span>
+                <p class="great-box__text">
+                  Thanks for contacting us! We will get back to you ASAP.
+                </p>
 
-              <input type="text"
-                     name="email"
-                     placeholder="Enter your email address..."
-                     class="form__item form__input"
-              >
-            </label>
-
-            <p class="form__sub-title">Message</p>
-            <label class="form__list">
-              <span class="error__active hide-error">Error Message</span>
-
-              <textarea name="message"
-                        placeholder="Your message..."
-                        class="form__item form__textarea"
-              ></textarea>
-            </label>
-
-            <button type="submit" class="btn form__btn">Send</button>
+                <a href="#" class="great-box__btn">Great!</a>
+              </div>
+            </div>
           </form>
         </div>
 

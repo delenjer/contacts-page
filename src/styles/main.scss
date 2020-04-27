@@ -9,6 +9,8 @@
 @import "contacts-info";
 @import "select";
 @import "error-form";
+@import "loaded";
+@import "great-box";
 
 * {
   box-sizing: border-box;
@@ -55,8 +57,10 @@ body {
 }
 
 .btn {
-  display: inline-block;
+  position: relative;
+  //display: inline-block;
   width: 100%;
+  min-height: 50px;
   padding: 16px 0;
   background-color: $btn-bg;
   border-radius: 4px;
@@ -65,4 +69,8 @@ body {
   font-weight: bold;
   color: $btn-color;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

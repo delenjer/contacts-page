@@ -2,8 +2,11 @@
 
 const form = document.querySelector('.form');
 const collectionsInputs = document.querySelectorAll('.form__input');
-// const formList = document.querySelectorAll('.form__list');
-// const activeError = document.querySelector('.error__active');
+const hideWrapper = document.querySelector('.hide-wrapper');
+const textBtn = document.querySelector('.btn-text');
+const loadedBtn = document.querySelector('.loaded');
+const greatBox = document.querySelector('.great-box');
+const greatBoxBtn = document.querySelector('.great-box__btn');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -57,8 +60,22 @@ form.addEventListener('submit', (e) => {
   });
 
   if (s.every(item => item === true)) {
-    // console.log('Congratulations');
-    //
-    // inputs.map(input => input.value = '');
+    hideWrapper.classList.add('hidden-wrapper');
+    textBtn.classList.add('hide-btn-elem');
+    loadedBtn.classList.remove('hide-btn-elem');
+
+    setTimeout(() =>
+      greatBox.classList.remove('hide-great-box'), 1000);
+
+    // eslint-disable-next-line no-return-assign
+    inputs.map(input => input.value = '');
   }
 }, false);
+
+greatBoxBtn.addEventListener('click', () => {
+  greatBox.classList.add('hide-great-box');
+
+  hideWrapper.classList.remove('hidden-wrapper');
+  textBtn.classList.remove('hide-btn-elem');
+  loadedBtn.classList.add('hide-btn-elem');
+});
