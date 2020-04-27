@@ -1,6 +1,5 @@
 @import "utils";
 @import "fonts";
-@import "typography";
 @import "header";
 @import "nav";
 @import "contacts";
@@ -52,13 +51,8 @@ body {
   }
 }
 
-.main {
-  //height: 100%;
-}
-
 .btn {
   position: relative;
-  //display: inline-block;
   width: 100%;
   min-height: 50px;
   padding: 16px 0;
