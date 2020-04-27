@@ -1,7 +1,8 @@
 'use strict';
 
 const form = document.querySelector('.form');
-const collectionsInputs = document.querySelectorAll('.form__input');
+const collectionInputs = document.querySelectorAll('.form__input');
+const inputs = Object.values(collectionInputs);
 const hideWrapper = document.querySelector('.hide-wrapper');
 const textBtn = document.querySelector('.btn-text');
 const loadedBtn = document.querySelector('.loaded');
@@ -11,12 +12,21 @@ const greatBoxBtn = document.querySelector('.great-box__btn');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const inputs = Object.values(collectionsInputs);
+  const handleForm = handleValidationForm();
+
+  if (handleForm.every(item => item === true)) {
+    successfulUploadForm();
+  }
+}, false);
+
+initialStateForm();
+
+function handleValidationForm() {
   const patternText = /[A-Za-z -]/g;
   const patternNum = /[0-9]/g;
   const patternEmail = /\S+@\S+\.\S+/g;
 
-  const s = inputs.map(input => {
+  return inputs.map(input => {
     const getNameInput = input.getAttribute('name');
     const inputValue = input.value;
 
@@ -58,24 +68,25 @@ form.addEventListener('submit', (e) => {
         break;
     }
   });
+}
 
-  if (s.every(item => item === true)) {
-    hideWrapper.classList.add('hidden-wrapper');
-    textBtn.classList.add('hide-btn-elem');
-    loadedBtn.classList.remove('hide-btn-elem');
+function successfulUploadForm() {
+  hideWrapper.classList.add('hidden-wrapper');
+  textBtn.classList.add('hide-btn-elem');
+  loadedBtn.classList.remove('hide-btn-elem');
 
-    setTimeout(() =>
-      greatBox.classList.remove('hide-great-box'), 1000);
+  setTimeout(() =>
+    greatBox.classList.remove('hide-great-box'), 1000);
 
-    // eslint-disable-next-line no-return-assign
-    inputs.map(input => input.value = '');
-  }
-}, false);
+  // eslint-disable-next-line no-return-assign
+  inputs.map(input => input.value = '');
+}
 
-greatBoxBtn.addEventListener('click', () => {
-  greatBox.classList.add('hide-great-box');
-
-  hideWrapper.classList.remove('hidden-wrapper');
-  textBtn.classList.remove('hide-btn-elem');
-  loadedBtn.classList.add('hide-btn-elem');
-});
+function initialStateForm() {
+  greatBoxBtn.addEventListener('click', () => {
+    greatBox.classList.add('hide-great-box');
+    hideWrapper.classList.remove('hidden-wrapper');
+    textBtn.classList.remove('hide-btn-elem');
+    loadedBtn.classList.add('hide-btn-elem');
+  });
+}
