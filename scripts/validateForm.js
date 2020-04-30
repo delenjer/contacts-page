@@ -42,7 +42,7 @@ function selectValidate() {
 }
 
 function handleValidationForm() {
-  const patternText = /[A-Za-z -]/g;
+  const patternText = /[A-Za-z]/g;
   const patternNum = /^((0|0)+([0-9]){9})$/g;
   const patternEmail = /\S+@\S+\.\S+/g;
 
