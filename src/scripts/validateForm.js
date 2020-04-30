@@ -9,10 +9,16 @@ const loadedBtn = document.querySelector('.loaded');
 const greatBox = document.querySelector('.great-box');
 const greatBoxBtn = document.querySelector('.great-box__btn');
 
+const select = document.querySelector('.select');
+const selectSelected = document.querySelector('.select-selected');
+const customSelect = document.querySelector('.custom-select');
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const handleForm = handleValidationForm();
+
+  selectValidate();
 
   if (handleForm.every(item => item === true)) {
     successfulUploadForm();
@@ -20,6 +26,16 @@ form.addEventListener('submit', (e) => {
 }, false);
 
 initialStateForm();
+
+function selectValidate() {
+  if (select.value === '') {
+    selectSelected.classList.add('error');
+    customSelect.firstElementChild.classList.remove('hide-error');
+  } else {
+    selectSelected.classList.remove('error');
+    customSelect.firstElementChild.classList.add('hide-error');
+  }
+}
 
 function handleValidationForm() {
   const patternText = /[A-Za-z -]/g;
