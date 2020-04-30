@@ -34,6 +34,7 @@ for (i = 0; i < x.length; i++) {
       for (i = 0; i < s.length; i++) {
         if (s.options[i].innerHTML === this.innerHTML) {
           s.selectedIndex = i;
+
           h.innerHTML = this.innerHTML;
           y = this.parentNode.getElementsByClassName('same-as-selected');
 

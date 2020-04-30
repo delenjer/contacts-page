@@ -17,10 +17,14 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const handleForm = handleValidationForm();
+  const checkHandleForm = handleForm.every(item => item === true);
+  const checkSelect = select.value === '';
 
   selectValidate();
 
-  if (handleForm.every(item => item === true)) {
+  if (!checkHandleForm || checkSelect) {
+    return false;
+  } else {
     successfulUploadForm();
   }
 }, false);
@@ -91,6 +95,8 @@ function handleValidationForm() {
 }
 
 function successfulUploadForm() {
+  const optionsSelectDefault = '<option value="">Work opportunities</option>';
+
   hideWrapper.classList.add('hidden-wrapper');
   textBtn.classList.add('hide-btn-elem');
   loadedBtn.classList.remove('hide-btn-elem');
@@ -100,6 +106,8 @@ function successfulUploadForm() {
 
   // eslint-disable-next-line no-return-assign
   inputs.map(input => input.value = '');
+
+  selectSelected.innerHTML = optionsSelectDefault;
 }
 
 function initialStateForm() {
